@@ -3,15 +3,34 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>App</title>
+	<title>Piano</title>
 	<link rel="stylesheet" href="app.css">
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="app.js" type="text/javascript" charset="utf-8"></script>
+	<script src="audioManager.js" type="text/javascript" charset="utf-8"></script>
+	<script src="piano.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 	<div id="app">
-		<header>App</header>
-		<div id="main"></div>
+		<header>PianoApp</header>
+		<div id="main">
+			<div id="keyboard"></div>
+			<div class="keys">
+				<div data-note="2C" class="piano-key white"></div>
+				<div data-note="2C#" class="piano-key black"></div>
+				<div data-note="2D" class="piano-key white"></div>
+				<div data-note="2D#" class="piano-key black"></div>
+				<div data-note="2E" class="piano-key white"></div>
+				<div data-note="2F" class="piano-key white"></div>
+				<div data-note="2F#" class="piano-key black"></div>
+				<div data-note="2G" class="piano-key white"></div>
+				<div data-note="2G#" class="piano-key black"></div>
+				<div data-note="2A" class="piano-key white"></div>
+				<div data-note="2A#" class="piano-key black"></div>
+				<div data-note="2B" class="piano-key white"></div>
+				<!-- third octave not shown -->
+				<div data-note="4C" class="piano-key white"></div>
+			</div>
+		</div>
 		<footer></footer>
 	</div>
 
