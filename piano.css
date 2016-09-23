@@ -104,13 +104,13 @@ button
 	z-index:2;
 }
 
-#keyboard .piano-key.white.down: {
+#keyboard .piano-key.white.down {
 	background-color: #f1f1f0;
 	background: linear-gradient(top, Ivory, #d5d5d0);
 	box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.6);
 }
 
-#keyboard .piano-key.black.down: {
+#keyboard .piano-key.black.down {
 	background-color: #111;
 	background: linear-gradient(top, Black, #222);
 	box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.6);

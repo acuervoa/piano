@@ -14,6 +14,8 @@ function PianoApp()
 		setStatus("ready");
 		loadAudio();
 		initKeyboard();
+		$(document).keydown(onKeyDown)
+					.keyup(onKeyUp);
 	}
 
 	function loadAudio()
@@ -63,6 +65,12 @@ function PianoApp()
 			.mouseup(function() { keyUp($(this)); })
 			.mouseleave(function() { keyUp($(this)); });
 		}
+
+		$keys.each(function() {
+			var $key = $(this);
+			var keyCode = keyCodes[$key.data["keycode"]];
+			keyCodesToNotes[keyCode] = $key.data("note");
+ 		});
 	}
 
 	function keyDown($key)
@@ -80,6 +88,41 @@ function PianoApp()
 	function keyUp($key) 
 	{
 		$key.removeClass("down");
+	}
+
+	function onKeyDown(e)
+	{
+		var note = keyCodesToNotes[e.which];
+		if (note)
+		{
+			pressPianoKey(note);
+		}
+	}
+
+	function onKeyUp(e)
+	{
+		var note = keyCodesToNotes[e.which];
+		if (note)
+		{
+			releasePianoKey(note);
+		}
+	}
+
+	function pressPianoKey(note)
+	{
+		var $key = getPianoKeyElement(note);
+		keyDown($key);
+	}
+
+	function releasePianoKey(note)
+	{
+		var $key = getPianoKeyElement(note);
+		keyUp($key);
+	}
+
+	function getPianoKeyElement(note)
+	{
+		return $("#keyboard .piano-key[data-note=" + note + "]");
 	}
 }
 
